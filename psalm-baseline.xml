@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="4.9.3@4c262932602b9bbab5020863d1eb22d49de0dbf4">
+  <file src="src/Undotter.php">
+    <MixedArgument occurrences="2">
+      <code>$array[$key] ?? []</code>
+      <code>$output[$k]</code>
+    </MixedArgument>
+    <MixedAssignment occurrences="7">
+      <code>$a[$key]</code>
+      <code>$a[$key]</code>
+      <code>$a[]</code>
+      <code>$array[$key]</code>
+      <code>$output[$k]</code>
+      <code>$v</code>
+      <code>$value</code>
+    </MixedAssignment>
+  </file>
+  <file src="tests/UndotterTest.php">
+    <MixedArrayAccess occurrences="3">
+      <code>$result['a']['b']</code>
+      <code>$this-&gt;undot($config)['a']['b']</code>
+      <code>$this-&gt;undot($config)['a']['b']</code>
+    </MixedArrayAccess>
+  </file>
+</files>
