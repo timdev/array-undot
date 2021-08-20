@@ -14,10 +14,6 @@
     "require": {
         "php": "^8.0"
     },
-    "repositories": [{
-        "type": "vcs",
-        "url": "../timdev-php-lib"
-    }],
     "autoload": {
         "psr-4": {
             "TimDev\\ArrayUndot\\": "src/"
