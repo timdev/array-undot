@@ -85,5 +85,9 @@ Undotter::undot([
 Laminas ConfigAggregator. That's handy, since it allows you to un-dot your array
 *before* ConfigAggregator writes its cache.
 
-For an example, see the `[testMergesSubArrays()](tests/UndotterTest.php:65:108) 
+For an example, see the `[testMergesSubArrays()] 
 test method.
+
+[testMergesSubArrays()]: https://github.com/timdev/array-undot/blob/78b3bcea760f3a14510a4de3ef62de26de9ae1b1/tests/UndotterTest.php#L65-L108
+[mezzio]: https://github.com/mezzio/mezzio
+[laminas-config-aggregator]: https://github.com/laminas/laminas-config-aggregator
