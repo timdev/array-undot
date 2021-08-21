@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace TimDev\Test\ArrayUndot;
@@ -10,10 +11,9 @@ use TimDev\ArrayUndot\Undotter;
 
 class UndotterTest extends TestCase
 {
-
     private function undot(array $array): array
     {
-        return (new Undotter())($array);
+        return Undotter::undot($array);
     }
 
     public function testBasic(): void
@@ -57,7 +57,7 @@ class UndotterTest extends TestCase
         ];
 
         self::assertEquals(
-            ['a' => ['b' => ['c' =>['d' => 'PASS']]]],
+            ['a' => ['b' => ['c' => ['d' => 'PASS']]]],
             $this->undot($config)
         );
     }
@@ -104,7 +104,6 @@ class UndotterTest extends TestCase
         ];
         self::assertEquals($expected, $result['a']['b']);
         self::assertEquals(['a', 'm', 'x'], array_keys($result));
-
     }
 
     public function testDocumentationExample1(): void

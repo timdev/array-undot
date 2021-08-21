@@ -56,8 +56,8 @@ Undotter::undot([
 
 // ... but if the order is swapped
 Undotter::undot([
-    'a.b' => 'BAR'
-    'a' => ['b' => 'FOO'],
+    'a.b' => 'BAR',
+    'a' => ['b' => 'FOO']
 ]); 
 // => ['a' => ['b' => 'FOO']]
 
