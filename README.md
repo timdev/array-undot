@@ -81,12 +81,11 @@ Undotter::undot([
 
 ## With Laminas ConfigAggregator
 
-`Undotter` is invokable, which makes it easy to use as a post-processor with 
-Laminas ConfigAggregator. That's handy, since it allows you to un-dot your array
-*before* ConfigAggregator writes its cache.
+`Undotter` is invokable, which makes it easy to use as a post-processor with
+[laminas-config-aggregator]. That's handy, since it allows you to un-dot your 
+array *before* ConfigAggregator writes its cache.
 
-For an example, see the `[testMergesSubArrays()] 
-test method.
+For an example, see the [testMergesSubArrays()] test method.
 
 [testMergesSubArrays()]: https://github.com/timdev/array-undot/blob/78b3bcea760f3a14510a4de3ef62de26de9ae1b1/tests/UndotterTest.php#L65-L108
 [mezzio]: https://github.com/mezzio/mezzio
