@@ -1,7 +1,7 @@
 {
     "name": "timdev/array-undot",
-    "description": "A utility to normalize arrays with dotted-string keys. ['a.b' => 'c'] ==> ['a' => ['b' => 'c']]",
     "type": "library",
+    "description": "A utility to normalize arrays with dotted-string keys. ['a.b' => 'c'] ==> ['a' => ['b' => 'c']]",
     "license": "MIT",
     "authors": [
         {
@@ -9,10 +9,12 @@
             "email": "dev@timdev.com"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^8.0"
+    },
+    "require-dev": {
+        "laminas/laminas-config-aggregator": "^1.5",
+        "timdev/devtools": "^0.1"
     },
     "autoload": {
         "psr-4": {
@@ -24,12 +26,14 @@
             "TimDev\\Test\\ArrayUndot\\": "tests/"
         }
     },
-    "require-dev": {
-        "laminas/laminas-config-aggregator": "^1.5",
-        "timdev/devtools": "^0.1"
-    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
-        "test": "phpunit --testdox",
-        "analyze": "psalm"
+        "analyze": "psalm",
+        "coverage": "XDEBUG_MODE=coverage phpunit --coverage-text --colors=always",
+        "coverage:html": "XDEBUG_MODE=coverage phpunit --coverage-html build/coverage",
+        "cs": "phpcs",
+        "cs:fix": "phpcbf",
+        "test": "phpunit --testdox --color=always"
     }
 }
