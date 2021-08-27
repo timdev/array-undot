@@ -41,6 +41,41 @@ class UndotterTest extends TestCase
         self::assertSame('Nested', $this->undot($config)['a']['b']);
     }
 
+    public function testMergesLists(): void
+    {
+        $config = [
+            'a' => [
+                'b' => ['c' => [1,2]]
+            ],
+            'a.b' => ['c' => [3, 'foo']]
+        ];
+
+        self::assertEquals(
+            ['a' => ['b' => ['c' => [1,2,3,'foo']]]],
+            $this->undot($config)
+        );
+    }
+
+    public function testMergesHashes(): void
+    {
+        $config = [
+            'a' => [
+                'b' => ['foo' => 'bar', 'baz' => 'qux']
+            ],
+            'a.b' => ['quux' => 'corge', 'garply' => 'waldo'],
+            'a.b.baz' => 'quux'
+        ];
+        self::assertEquals(
+            ['a' => ['b' => [
+                'foo' => 'bar',
+                'baz' => 'quux',
+                'quux' => 'corge',
+                'garply' => 'waldo'
+            ]]],
+            $this->undot($config)
+        );
+    }
+
     public function testMixedNestingAndDots(): void
     {
         $config = [

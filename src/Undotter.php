@@ -80,8 +80,9 @@ final class Undotter
         }
 
         $key = array_shift($keys)
+            // @codeCoverageIgnoreStart
             ?? throw new \LogicException('$keys should always contain a single, string, element');
-
+            // @codeCoverageIgnoreEnd
         if (is_array($value)) {
             $array[$key] = static::merge($array[$key] ?? [], $value);
         } else {
