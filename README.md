@@ -1,5 +1,11 @@
 # timdev/array-undot
 
+![PHP Version Support](https://img.shields.io/packagist/php-v/timdev/array-undot?style=flat)
+![License](https://img.shields.io/packagist/l/timdev/array-undot?style=flat&colorB=darkcyan)
+![Latest Release](https://img.shields.io/github/v/tag/timdev/array-undot?style=flat&label=release)
+![Type Coverage](https://shepherd.dev/github/timdev/array-undot/coverage.svg)
+![CIStatus](https://img.shields.io/github/workflow/status/timdev/array-undot/Continuous%20Integration?style=flat)
+
 ## What's This?
 
 It normalizes arrays with dotted-string keys to arrays without any dotted-string
