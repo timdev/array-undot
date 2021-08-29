@@ -10,12 +10,15 @@ be overwritten when that package is updated.
 If you need to override anything, create a non-.dist phpcs.xml!
 -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
          bootstrap="./vendor/autoload.php"
          cacheResultFile="./build/cache/phpunit.result.cache"
          colors="true"
          verbose="true">
 
+    <php>
+        <ini name="assert.exception" value="On"/>
+    </php>
     <testsuites>
         <testsuite name="unit-tests">
             <directory>./tests</directory>

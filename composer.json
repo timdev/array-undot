@@ -34,6 +34,28 @@
         "coverage:html": "XDEBUG_MODE=coverage phpunit --coverage-html build/coverage",
         "cs": "phpcs",
         "cs:fix": "phpcbf",
+        "dev": "@dev:qa",
+        "dev:analyze": "psalm",
+        "dev:coverage": "XDEBUG_MODE=coverage phpunit --coverage-text --colors=always",
+        "dev:coverage:html": "XDEBUG_MODE=coverage phpunit --coverage-html build/coverage && echo '\\nCoverage Report: build/coverage/index.html'",
+        "dev:cs": "phpcs",
+        "dev:cs:fix": "phpcbf",
+        "dev:qa": [
+            "@dev:analyze",
+            "@dev:test",
+            "@dev:cs"
+        ],
+        "dev:test": "phpunit --testdox --color=always",
         "test": "phpunit --testdox --color=always"
+    },
+    "scripts-descriptions": {
+        "dev": "Shortcut for dev:qa.",
+        "dev:analyze": "Run static analysis with psalm.",
+        "dev:coverage": "Report unit test coverage with output in the terminal.",
+        "dev:coverage:html": "Generate unit test coverage report.",
+        "dev:cs": "Run code style checks.",
+        "dev:cs:fix": "Fix code style violations.",
+        "dev:qa": "Run all quality checks (tests, static analysis, and coding standard).",
+        "dev:test": "Run unit tests."
     }
 }
