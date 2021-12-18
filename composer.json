@@ -1,8 +1,8 @@
 {
     "name": "timdev/array-undot",
-    "type": "library",
     "description": "A utility to normalize arrays with dotted-string keys. ['a.b' => 'c'] ==> ['a' => ['b' => 'c']]",
     "license": "MIT",
+    "type": "library",
     "authors": [
         {
             "name": "Tim Lieberman",
@@ -10,12 +10,14 @@
         }
     ],
     "require": {
-        "php": "~8.0.0"
+        "php": "~8.0.0 || ~8.1.0"
     },
     "require-dev": {
         "laminas/laminas-config-aggregator": "^1.5",
         "timdev/devtools": "^0.1"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "TimDev\\ArrayUndot\\": "src/"
@@ -26,8 +28,6 @@
             "TimDev\\Test\\ArrayUndot\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "scripts": {
         "analyze": "psalm",
         "coverage": "XDEBUG_MODE=coverage phpunit --coverage-text --colors=always",
